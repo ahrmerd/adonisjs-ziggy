@@ -1,0 +1,45 @@
+{
+  "name": "adonisjs-ziggy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "mrm": "mrm --preset=@adonisjs/mrm-preset",
+    "pretest": "npm run lint",
+    "test": "node -r @adonisjs/require-ts/build/register bin/test.ts",
+    "clean": "del-cli build",
+    "compile": "npm run lint && npm run clean && tsc",
+    "build": "npm run compile",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@adonisjs/core": "^6.12.1",
+    "@adonisjs/mrm-preset": "^5.0.3",
+    "@adonisjs/require-ts": "^2.0.13",
+    "@types/node": "^22.1.0",
+    "del-cli": "^5.1.0",
+    "mrm": "^4.1.22",
+    "typescript": "^5.5.4"
+  },
+  "peerDependencies": {
+    "@adonisjs/core": "^6.12.1"
+  },
+  "mrmConfig": {
+    "core": false,
+    "license": "MIT",
+    "services": [
+      "github-actions"
+    ],
+    "minNodeVersion": "latest",
+    "probotApps": [],
+    "runGhActionsOnWindows": false
+  },
+  "files": [
+    "build/src",
+    "build/index.d.ts",
+    "build/index.js"
+  ]
+}
